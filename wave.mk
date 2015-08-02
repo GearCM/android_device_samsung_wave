@@ -42,7 +42,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml
 
 # These are the hardware-specific configuration files
-PRODUCT_COPY_FILES := \
+PRODUCT_COPY_FILES += \
 	device/samsung/wave/prebuilt/asound.conf:system/etc/asound.conf \
 	device/samsung/wave/libaudio/audio_policy.conf:system/etc/audio_policy.conf \
 	device/samsung/wave/prebuilt/egl.cfg:system/lib/egl/egl.cfg \
@@ -78,7 +78,7 @@ PRODUCT_COPY_FILES += \
 	device/samsung/wave/prebuilt/usr/keychars/gpio-keys.kcm:system/usr/keychars/gpio-keys.kcm
 
 # SHP Modem interfaces
-PRODUCT_PACKAGES := \
+PRODUCT_PACKAGES += \
 	libmocha-ril
 
 # Filesystem management tools
@@ -153,7 +153,7 @@ PRODUCT_COPY_FILES += \
 
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
-PRODUCT_PROPERTY_OVERRIDES := \
+PRODUCT_PROPERTY_OVERRIDES += \
 	ro.opengles.version=131072 \
 	debug.hwui.render_dirty_regions=false \
 	ro.zygote.disable_gl_preload=true
@@ -168,7 +168,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.telephony.ril.config=signalstrength \
 	ro.sf.lcd_density=240 \
 	ro.bq.gpu_to_cpu_unsupported=1 \
-	ro.config.low_ram=true \
+	ro.config.low_ram=true
 
 # SGX540 is slower with the scissor optimization enabled
 PRODUCT_PROPERTY_OVERRIDES += \
