@@ -21,7 +21,7 @@
 BOARD_SECOND_CAMERA_DEVICE := /dev/video2
 
 # Kernel Config
-TARGET_KERNEL_CONFIG := omni_wave_defconfig
+TARGET_KERNEL_CONFIG := GearKernel_wave_defconfig
 
 # FM Radio
 BOARD_HAVE_FM_RADIO := true
@@ -148,19 +148,6 @@ COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
 # Screenrecord
 BOARD_SCREENRECORD_LANDSCAPE_ONLY := true
-
-# SELinux
-BOARD_SEPOLICY_DIRS += \
-    device/samsung/wave/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    bdaddr_read.te \
-    file_contexts \
-    property_contexts \
-    pvrsrvinit.te \
-    rild.te \
-    tvouthack.te \
-    tvoutserver.te \
 
 # Include wave specific stuff
 -include device/samsung/wave/Android.mk
