@@ -215,7 +215,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 
-include frameworks/native/build/phone-hdpi-dalvik-heap.mk
+# call dalvik heap config
+$(call inherit-product-if-exists, frameworks/native/build/phone-hdpi-dalvik-heap.mk)
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
