@@ -128,7 +128,7 @@ PRODUCT_PACKAGES += \
 # Device-specific packages
 PRODUCT_PACKAGES += \
 	DeviceSettings \
-	OmniTorch
+	Torch
 
 # f2fs
 PRODUCT_PACKAGES += \

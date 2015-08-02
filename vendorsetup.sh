@@ -1,0 +1,3 @@
+add_lunch_combo cm_wve-user
+add_lunch_combo cm_wave-userdebug
+add_lunch_combo cm_wave-eng
