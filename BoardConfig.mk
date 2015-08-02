@@ -122,6 +122,9 @@ TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 TARGET_BOOTANIMATION_USE_RGB565 := true
 
+# Use dlmalloc instead of jemalloc for mallocs on low-ram target kernels
+MALLOC_IMPL := dlmalloc
+
 # Hardware rendering
 USE_OPENGL_RENDERER := true
 
