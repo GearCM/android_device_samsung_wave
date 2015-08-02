@@ -5,7 +5,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+#	  http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -36,10 +36,6 @@
 # These are the hardware-specific configuration files
 DEVICE_PACKAGE_OVERLAYS += \
 	device/samsung/wave/overlay
-
-# We have FFC
-PRODUCT_COPY_FILES += \
-	frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml
 
 # These are the hardware-specific configuration files
 PRODUCT_COPY_FILES += \
@@ -140,6 +136,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
 	frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+	frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
 	frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
 	frameworks/native/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
 	frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
@@ -154,66 +151,36 @@ PRODUCT_COPY_FILES += \
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.opengles.version=131072 \
-	debug.hwui.render_dirty_regions=false \
-	ro.zygote.disable_gl_preload=true
+	ro.opengles.version=131072
 
 # These are the hardware-specific settings that are stored in system properties.
 # Note that the only such settings should be the ones that are too low-level to
 # be reachable from resources or other mechanisms.
 PRODUCT_PROPERTY_OVERRIDES += \
-	wifi.interface=wlan0 \
-	mobiledata.interfaces=pdp0,eth0,gprs,ppp0 \
-	rild.libpath=/system/lib/libmocha-ril.so \
-	ro.telephony.ril.config=signalstrength \
-	ro.sf.lcd_density=240 \
-	ro.bq.gpu_to_cpu_unsupported=1 \
+	wifi.interface=wlan0
+
+PRODUCT_PROPERTY_OVERRIDES += \
 	ro.config.low_ram=true
-
-# SGX540 is slower with the scissor optimization enabled
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.hwui.disable_scissor_opt=true
-
-# enable Google-specific location features,
-# like NetworkLocationProvider and LocationCollector
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.com.google.locationfeatures=1 \
-	ro.com.google.networklocation=1
 
 # Extended JNI checks
 # The extended JNI checks will cause the system to run more slowly, but they can spot a variety of nasty bugs 
 # before they have a chance to cause problems.
 # Default=true for development builds, set by android buildsystem.
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.kernel.android.checkjni=0 \
-    dalvik.vm.checkjni=false
-
-# ART parameters
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dex2oat-flags "--compiler-filter=interpret-only" \
-    dalvik.vm.image-dex2oat-flags "" \
-    dalvik.vm.profiler=1 \
-    dalvik.vm.isa.arm.features=lpae
-
-# Reduce background apps limit to 12 on low-tier devices
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.fw.bg_apps_limit=12
-
-# Set max background services
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.max_starting_bg=6
+	ro.kernel.android.checkjni=0 \
+	dalvik.vm.checkjni=false
 
 # Override /proc/sys/vm/dirty_ratio on UMS
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vold.umsdirtyratio=20
+	ro.vold.umsdirtyratio=20
 
 # Move Dalvik cache on /data partition
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dexopt-data-only=1
+	dalvik.vm.dexopt-data-only=1
 
 # Set default USB interface and default to internal SD as /sdcard
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
+	persist.sys.usb.config=mtp
 
 # call dalvik heap config
 $(call inherit-product-if-exists, frameworks/native/build/phone-hdpi-dalvik-heap.mk)
