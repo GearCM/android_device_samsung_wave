@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+	<project name="GearCM/android_vendor_samsung_wave" path="vendor/samsung/wave" remote="github" revision="cm-11.0" />
+	<project name="GearCM/android_kernel_samsung_aries" path="kernel/samsung/aries" remote="github" revision="GearKernel_Reborn" />
+	<project name="Badadroid/android_external_libmocha-ipc" path="external/libmocha-ipc" remote="github" revision="android-4.4" />
+</manifest>
