@@ -25,15 +25,16 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/omni/config/common_mini_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/wave/device.mk)
+$(call inherit-product, device/samsung/wave/wave.mk)
 
 # Wave uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # Device identifier
-PRODUCT_RELEASE_NAME := Wave
+PRODUCT_NAME := cm_wave
 PRODUCT_DEVICE := wave
-PRODUCT_NAME := omni_wave
-PRODUCT_BRAND := samsung
+PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := GT-S8500
+
+PRODUCT_BRAND := samsung
