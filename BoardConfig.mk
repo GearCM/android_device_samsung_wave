@@ -58,6 +58,7 @@ BOARD_MOBILEDATA_INTERFACE_NAME = "pdp0"
 
 # Kernel Source
 TARGET_KERNEL_SOURCE := kernel/samsung/aries
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/wave
