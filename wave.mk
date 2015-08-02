@@ -79,7 +79,8 @@ PRODUCT_PACKAGES += \
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
-	setup_fs
+	setup_fs \
+	bml_over_mtd
 
 # Usb accessory
 PRODUCT_PACKAGES += \
