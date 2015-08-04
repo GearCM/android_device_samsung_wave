@@ -20,11 +20,12 @@ import os
 
 TARGET_DIR = os.getenv('OUT')
 UTILITIES_DIR = os.path.join(TARGET_DIR, 'utilities')
+SYSBIN_DIR = os.path.join(TARGET_DIR, 'system/bin')
 
 def FullOTA_Assertions(info):
 
   info.output_zip.write(os.path.join(UTILITIES_DIR, "make_ext4fs"), "make_ext4fs")
-  info.output_zip.write(os.path.join(UTILITIES_DIR, "mkfs.f2fs"), "mkfs.f2fs")
+  info.output_zip.write(os.path.join(SYSBIN_DIR, "mkfs.f2fs"), "mkfs.f2fs")
   info.output_zip.write(os.path.join(UTILITIES_DIR, "busybox"), "busybox")
   info.output_zip.write(os.path.join(UTILITIES_DIR, "flash_image"), "flash_image")
 
