@@ -32,6 +32,7 @@ mount -t f2fs /dev/lvpool/userdata /data
 
 busybox mkdir /data/media
 busybox mkdir /data/media/0
+
 umount /data
 
 ui_print "Partitions had been prepared"
