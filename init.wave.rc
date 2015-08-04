@@ -1,96 +1,74 @@
 import init.wave.usb.rc
 
-on init
-    loglevel 9
-
-    # See storage config details at http://source.android.com/tech/storage/
-    mkdir /mnt/shell/emulated 0700 shell shell
-    mkdir /storage/emulated 0555 root root
-
-    #External storage directories
-    mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
-    mkdir /storage/sdcard1 0700 root root
-
-    export EXTERNAL_STORAGE        /storage/emulated/legacy
-    export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
-    export EMULATED_STORAGE_TARGET /storage/emulated
-    export SECONDARY_STORAGE       /storage/sdcard1
-
-    # Support legacy paths
-    symlink /storage/emulated/legacy /sdcard
-    symlink /storage/emulated/legacy /mnt/sdcard
-    symlink /storage/emulated/legacy /storage/sdcard0
-    symlink /storage/emulated/legacy /storage/emulated/0
-    symlink /mnt/shell/emulated/0    /storage/emulated/legacy
-
-    symlink /storage/sdcard1 /extSdCard
-    symlink /storage/sdcard1 /mnt/extSdCard
-    symlink /storage/sdcard1 /external_sd
-
-    # We will create our own ril-daemon service in class 'core' because the
-    # rild doesn't like being killed. (During device encryption.)
-    stop ril-daemon
-
-on boot
+on early-init
     mount debugfs /sys/kernel/debug /sys/kernel/debug
 
-# fake some battery state
-    setprop status.battery.state Slow
-    setprop status.battery.level 5
-    setprop status.battery.level_raw  50
-    setprop status.battery.level_scale 9
+	write /sys/block/mmcblk0/queue/scheduler noop
 
-# phone
-    setprop ro.telephony.call_ring.multiple 0
-
-# call volume steps
-    setprop ro.config.vc_call_vol_steps 15
-
-# KSM
-    write /sys/kernel/mm/ksm/pages_to_scan 256
-    write /sys/kernel/mm/ksm/sleep_millisecs 1500
-    write /sys/kernel/mm/ksm/run 1
-
-# memory parameters
-    write /proc/sys/vm/page-cluster 0
-    write /proc/sys/vm/vfs_cache_pressure 85
-    write /proc/sys/vm/swappiness 70
-    write /proc/sys/vm/dirty_ratio 16
-    write /proc/sys/vm/dirty_background_ratio 12
-    write /proc/sys/vm/dirty_expire_centisecs 500
-    write /proc/sys/vm/dirty_writeback_centisecs 1000
-
-# readahead
+# Increase max readahead size to 256 KB
     write /sys/block/mmcblk0/queue/read_ahead_kb 256
     write /sys/block/mmcblk1/queue/read_ahead_kb 256
 
-# Prevents permission denied error for telephony
-    chmod 0644 /proc/cmdline
+# Flash storage isn't a good entropy source, and only causes
+# locking overhead in the kernel. Turn it off.
+	write /sys/block/mmcblk0/queue/add_random 0
+	write /sys/block/mmcblk1/queue/add_random 0
+
+on init
+# See storage config details at http://source.android.com/tech/storage/
+	mkdir /mnt/shell/emulated 0700 shell shell
+	mkdir /storage/emulated 0555 root root
+
+	mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
+	mkdir /storage/sdcard1 0700 root root
+
+	export EXTERNAL_STORAGE /storage/emulated/legacy
+	export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
+	export EMULATED_STORAGE_TARGET /storage/emulated
+	export SECONDARY_STORAGE /storage/sdcard1
+
+# Symlinks for backwards compatibility
+# Emulated Internal Storage
+	symlink /storage/emulated/legacy /sdcard
+	symlink /storage/emulated/legacy /mnt/sdcard
+	symlink /storage/emulated/legacy /storage/sdcard0
+	symlink /mnt/shell/emulated/0 /storage/emulated/legacy
+	
+# External Storage
+	symlink /storage/sdcard1 /external_sd
+	symlink /storage/sdcard1 /mnt/external_sd
+
+# We will create our own ril-daemon service in class 'core'
+# because rild doesn't like being killed
+    stop ril-daemon
 
 on fs
-    # LVM: set up LVM volumes
+# LVM: set up LVM volumes
     exec /lvm/sbin/lvm vgscan --mknodes --ignorelockingfailure
     exec /lvm/sbin/lvm vgchange -aly --ignorelockingfailure
     restorecon /dev/mapper/lvpool-system
     restorecon /dev/mapper/lvpool-userdata
 
+# Mount all Partitions
     mount yaffs2 mtd@cache /cache noatime nosuid nodev
-    mount_all fstab.wave
-    swapon_all fstab.wave
+    mount_all /fstab.wave
 
     setprop ro.crypto.fuse_sdcard true
 
-# permissions for bluetooth.
-    chown bluetooth net_bt_stack /dev/s3c2410_serial0
+on post-fs
+# 4.3 needs this
+    chmod 0644 /proc/cmdline
+
+# Permissions for Bluetooth
     chmod 0600 /dev/s3c2410_serial0
     chmod 0660 /sys/class/rfkill/rfkill0/state
+    chown bluetooth net_bt_stack /dev/s3c2410_serial0
     chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
     chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
     restorecon /sys/class/rfkill/rfkill0/state
     restorecon /sys/class/rfkill/rfkill0/type
 
 # Permissions for Battery Control
-
     chmod 0666 /sys/devices/platform/i2c-gpio.6/i2c-6/6-0066/max8998-charger/power_supply/battery/batt_soc
     chmod 0666 /sys/devices/platform/i2c-gpio.6/i2c-6/6-0066/max8998-charger/power_supply/battery/batt_volt
     chmod 0666 /sys/devices/platform/i2c-gpio.6/i2c-6/6-0066/max8998-charger/power_supply/battery/batt_temp_adc
@@ -98,35 +76,34 @@ on fs
     chmod 0666 /sys/devices/platform/i2c-gpio.6/i2c-6/6-0066/max8998-charger/power_supply/ac/online
     chmod 0666 /sys/devices/platform/i2c-gpio.6/i2c-6/6-0066/max8998-charger/power_supply/usb/online
 
-
 # Permissions for System Server and daemons.
     chown system system /sys/class/backlight/s5p_bl/brightness
 
 # change permission for uart_switch
-    chown radio radio /sys/class/sec/uart_switch/UART_SEL/value
     chmod 660 /sys/class/sec/uart_switch/UART_SEL/value
+    chown radio radio /sys/class/sec/uart_switch/UART_SEL/value
 
 # permission for tuning knobs
-    chown system system /sys/class/misc/pwm_duty/pwm_duty
     chmod 660 /sys/class/misc/pwm_duty/pwm_duty
+    chown system system /sys/class/misc/pwm_duty/pwm_duty
     restorecon /sys/class/misc/pwm_duty/pwm_duty
 
-    chown system system /sys/class/mdnieset_ui/switch_mdnieset_ui/mdnieset_ui_file_cmd
     chmod 660 /sys/class/mdnieset_ui/switch_mdnieset_ui/mdnieset_ui_file_cmd
+    chown system system /sys/class/mdnieset_ui/switch_mdnieset_ui/mdnieset_ui_file_cmd
     restorecon /sys/class/mdnieset_ui/switch_mdnieset_ui/mdnieset_ui_file_cmd
 
-    chown system system /sys/devices/virtual/misc/color_tuning/blue_multiplier
-    chown system system /sys/devices/virtual/misc/color_tuning/blue_v1_offset
-    chown system system /sys/devices/virtual/misc/color_tuning/green_multiplier
-    chown system system /sys/devices/virtual/misc/color_tuning/green_v1_offset
-    chown system system /sys/devices/virtual/misc/color_tuning/red_multiplier
-    chown system system /sys/devices/virtual/misc/color_tuning/red_v1_offset
     chmod 660 /sys/devices/virtual/misc/color_tuning/blue_multiplier
     chmod 660 /sys/devices/virtual/misc/color_tuning/blue_v1_offset
     chmod 660 /sys/devices/virtual/misc/color_tuning/green_multiplier
     chmod 660 /sys/devices/virtual/misc/color_tuning/green_v1_offset
     chmod 660 /sys/devices/virtual/misc/color_tuning/red_multiplier
     chmod 660 /sys/devices/virtual/misc/color_tuning/red_v1_offset
+    chown system system /sys/devices/virtual/misc/color_tuning/blue_multiplier
+    chown system system /sys/devices/virtual/misc/color_tuning/blue_v1_offset
+    chown system system /sys/devices/virtual/misc/color_tuning/green_multiplier
+    chown system system /sys/devices/virtual/misc/color_tuning/green_v1_offset
+    chown system system /sys/devices/virtual/misc/color_tuning/red_multiplier
+    chown system system /sys/devices/virtual/misc/color_tuning/red_v1_offset
     restorecon /sys/devices/virtual/misc/color_tuning/blue_multiplier
     restorecon /sys/devices/virtual/misc/color_tuning/blue_v1_offset
     restorecon /sys/devices/virtual/misc/color_tuning/green_multiplier
@@ -158,53 +135,64 @@ on fs
     restorecon /sys/devices/virtual/misc/voodoo_sound/stereo_expansion
     restorecon /sys/devices/virtual/misc/voodoo_sound/stereo_expansion_gain
 
-on post-fs
+# allow system to modify cpufreq control files
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+
+on post-fs-data
     mkdir /data/media 0770 media_rw media_rw
 
 # symlinks for samsung RIL
-    mkdir /data/radio
-    chown radio radio /data/radio
-    chmod 0775 /data/radio
+    mkdir /data/radio 0775 radio radio
     restorecon_recursive /data/radio
 
-	
-# allow system to modify cpufreq control files
-    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-    chown root system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+# Wi-FI
+	mkdir /data/misc/wifi 0770 wifi wifi
+	mkdir /data/misc/wifi/sockets 0770 wifi wifi
+	mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi
+	mkdir /data/misc/dhcp 0770 dhcp dhcp
+	chown dhcp dhcp /data/misc/dhcp
+
+# fake some battery state
+    setprop status.battery.state Slow
+    setprop status.battery.level 5
+    setprop status.battery.level_raw  50
+    setprop status.battery.level_scale 9
+
+# Set indication (checked by vold) that we have finished this action
+    setprop vold.post_fs_data_done 1
+
+on boot
+# KSM
+    write /sys/kernel/mm/ksm/pages_to_scan 256
+    write /sys/kernel/mm/ksm/sleep_millisecs 1500
+    write /sys/kernel/mm/ksm/run 1
+
+# memory parameters
+    write /proc/sys/vm/dirty_ratio 16
+    write /proc/sys/vm/dirty_background_ratio 12
+    write /proc/sys/vm/dirty_expire_centisecs 500
+    write /proc/sys/vm/dirty_writeback_centisecs 1000
+    write /proc/sys/vm/page-cluster 0
+    write /proc/sys/vm/swappiness 0
+    write /proc/sys/vm/vfs_cache_pressure 85
+
+# Set up kernel tracing, but disable it by default
+	chmod 0222 /sys/kernel/debug/tracing/trace_marker
+	write /sys/kernel/debug/tracing/tracing_on 0
 
 # trigger governor change uevent
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
 
-on post-fs-data
-	
-    # wi-fi
-    mkdir /data/misc/wifi/sockets 0770 wifi wifi
-    mkdir /data/misc/dhcp 0770 dhcp dhcp
+###
+# Services begin here
+###
 
-    # download cache
-    mkdir /data/download 0770 system cache
-
-    # logs
-    mkdir /data/log 0775 root root
-    chmod 0775 /data/log
-
-    setprop vold.post_fs_data_done 1
-
-on property:dev.bootcomplete=1
-    class_start late_start
-
-###############################################################################
-#-------------------- End Triggers / Actions ---------------------------------#
-###############################################################################
-
-#- Begin Core Services -#
-
-
- service wave-ril-daemon /system/bin/rild
+service wave-ril-daemon /system/bin/rild
     class core
     socket rild stream 660 root radio
     socket rild-debug stream 660 radio system
@@ -217,10 +205,6 @@ service pvrsrvinit /system/vendor/bin/pvrsrvinit
     user root
     group root
     oneshot
-
-#- End core Services -#
-
-#- Begin main Services -#
 
 service wpa_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf -e/data/misc/wifi/entropy.bin \
@@ -239,12 +223,12 @@ service dhcpcd_wlan0 /system/bin/dhcpcd -aABDKL
     disabled
     oneshot
 
-service dhcpcd_bt-pan /system/bin/dhcpcd -ABKL
+service iprenew_wlan0 /system/bin/dhcpcd -n
     class main
     disabled
     oneshot
 
-service iprenew_wlan0 /system/bin/dhcpcd -n
+service dhcpcd_bt-pan /system/bin/dhcpcd -ABKL
     class main
     disabled
     oneshot
@@ -261,22 +245,23 @@ service bdaddr /system/bin/bdaddr_read
     disabled
     oneshot
 
+# create virtual SD card at /mnt/sdcard, based on the /data/media directory
+# daemon will drop to user/group system/media_rw after initializing
+# underlying files in /data/media wil be created with user and group media_rw (1023)
+service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
+    class late_start
+
+service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard1 /storage/sdcard1
+    class late_start
+    disabled
+
 on property:init.svc.bootanim=running
     start bdaddr
+
+on property:init.svc.wpa_supplicant=stopped
+	stop dhcpcd
 
 # LMK values
 on property:sys.boot_completed=1
     write /sys/module/lowmemorykiller/parameters/minfree 3072,5120,8192,10241,12288,14336
-
-#- End main Services -#
-
-#- Begin late_start Services-#
-
-# virtual sdcard daemon running as media_rw (1023)
-service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
-    class late_start
-
-# fusewrapped external sdcard daemon running as media_rw (1023)
-service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard1 /storage/sdcard1
-    class late_start
-    disabled
+    write /sys/block/mmcblk0/queue/scheduler row

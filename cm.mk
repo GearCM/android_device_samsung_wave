@@ -12,24 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Bootanimation resolution
-TARGET_BOOTANIMATION_SIZE := 420x280
-
-# Wave is low-memory device
-TARGET_LOW_RAM_DEVICE := true
-
-# Inherit from the common Open Source product configuration
+# Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
-# Inherit from our custom product configuration
-$(call inherit-product, vendor/cm/config/common_mini_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/samsung/wave/wave.mk)
 
-# Wave uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := normal hdpi
-PRODUCT_AAPT_PREF_CONFIG := hdpi
+# Inherit some common CM stuff.
+$(call inherit-product, vendor/cm/config/common_mini_phone.mk)
 
 # Device identifier
 PRODUCT_NAME := cm_wave
