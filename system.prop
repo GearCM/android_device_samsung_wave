@@ -10,19 +10,24 @@ ro.zygote.disable_gl_preload=1
 # Disable Dirty Regions Rendering
 debug.hwui.render_dirty_regions=false
 
+# Disable Unsupported Features
 ro.bq.gpu_to_cpu_unsupported=1
 
+# Disable Scissor Optimizations on SGX540
 ro.hwui.disable_scissor_opt=true
 
 ## Screen ##
 
-# 480p Screen Density
+# WVGA Screen Density
 ro.sf.lcd_density=240
 
 ## Memory ##
- 
+
+# Limit Background Apps 
 ro.sys.fw.bg_apps_limit=12
 ro.config.max_starting_bg=6
+
+# Enable Low RAM Property
 ro.config.low_ram=true
 
 ## Radio ##
@@ -36,20 +41,16 @@ ro.telephony.ril.config=signalstrength
 ro.ril.hsdpa.category=24
 
 # Max Supported HSUPA Category
-#ro.ril.hsupa.category=6
+ro.ril.hsupa.category=6
 
 # Max Supported GPRS/EDGE Category
-#ro.ril.gprsclass=12
+ro.ril.gprsclass=10
 
 # Enable HSDPA/HSUPA
-#ro.ril.hsxpa=1
-
-## NFC ##
-
-# Reduce Debug Level
-nfc.app_log_level=2
+ro.ril.hsxpa=2
 
 ## OTA Updates ##
+
 ro.ota.romname=GearCM11_Wave
 ro.ota.version=20150803
 ro.ota.manifest=https://raw.githubusercontent.com/GearCM/android_device_samsung_wave/cm-11.0/ota.xml
