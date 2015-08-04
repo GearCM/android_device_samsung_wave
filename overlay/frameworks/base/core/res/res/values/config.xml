@@ -168,7 +168,7 @@
          NORMAL also preserves durability in non-WAL modes and uses checksums to ensure
          integrity although there is a small chance that an error might go unnoticed.
          Choices are: FULL, NORMAL, OFF. -->
-    <string name="db_default_sync_mode">OFF</string>
+    <string name="db_default_sync_mode">NORMAL</string>
 
     <!-- The database synchronization mode when using Write-Ahead Logging.
          FULL is safest and preserves durability at the cost of extra fsyncs.
@@ -176,7 +176,7 @@
          and after checkpoint operations.  If checkpoints are infrequent and power loss
          occurs, then committed transactions could be lost and applications might break.
          Choices are: FULL, NORMAL, OFF. -->
-    <string name="db_wal_sync_mode">OFF</string>
+    <string name="db_wal_sync_mode">NORMAL</string>
 
     <!-- Max number of downloads allowed to proceed concurrently -->
     <integer name="config_MaxConcurrentDownloadsAllowed">1</integer>
