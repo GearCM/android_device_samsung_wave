@@ -135,9 +135,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-# Set default USB interface
+# Set default USB interface & ADB Mode
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=mtp
+	persist.sys.usb.config=mtp \
+	persist.service.adb.enable=1
 
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number

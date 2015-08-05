@@ -16,6 +16,9 @@ ro.hwui.disable_scissor_opt=true
 # Disable GL Library Preload
 ro.zygote.disable_gl_preload=1
 
+# Enable 16bpp Trasparency
+persist.sys.prefer_16bpp=1
+
 ## Screen ##
 
 # WVGA Screen Density
@@ -23,12 +26,15 @@ ro.sf.lcd_density=240
 
 ## Memory ##
 
-# Limit Background Apps
+# Limit Background Apps & Services
 ro.config.max_starting_bg=6
 ro.sys.fw.bg_apps_limit=12
 
 # Enable Low RAM Property
 ro.config.low_ram=true
+
+# Enable Purgeable Assets
+persist.sys.purgeable_assets=1
 
 ## Radio ##
 
