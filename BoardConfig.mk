@@ -33,6 +33,7 @@ TARGET_BOARD_PLATFORM := s5pc110
 
 # Architecture
 TARGET_ARCH := arm
+TARGET_ARCH_LOWMEM := true
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_ARCH_VARIANT_CPU := cortex-a8
 TARGET_CPU_ABI := armeabi-v7a
@@ -55,7 +56,7 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_CMDLINE := console=ttyFIQ0,115200 init=/init no_console_suspend
 TARGET_KERNEL_CONFIG := GearKernel_wave_defconfig
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
-TARGET_KERNEL_SOURCE := kernel/samsung/aries 
+TARGET_KERNEL_SOURCE := kernel/samsung/aries
 
 # Audio
 BOARD_USES_GENERIC_AUDIO := false
