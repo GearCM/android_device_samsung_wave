@@ -39,6 +39,7 @@ BOARD_NO_32BPP := false
 
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_ARCH_VARIANT_CPU := cortex-a8
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := false
@@ -62,6 +63,9 @@ TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/wave
+
+# Fonts
+SMALLER_FONT_FOOTPRINT := true
 
 # Camera
 USE_CAMERA_STUB := false
@@ -119,7 +123,6 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/s3c-usbgadget/gadget/l
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/aries-common/recovery/graphics.c
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/wave/recovery/recovery_keys.c
 BOARD_USES_BML_OVER_MTD := true
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/wave/shbootimg.mk

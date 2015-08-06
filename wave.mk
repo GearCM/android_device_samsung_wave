@@ -46,7 +46,7 @@ PRODUCT_COPY_FILES += \
 	device/samsung/wave/prebuilt/nvram_net_s8530.txt:system/vendor/firmware/nvram_net_s8530.txt \
 	device/samsung/wave/prebuilt/bcm4329_s8500.hcd:system/vendor/firmware/bcm4329_s8500.hcd \
 	device/samsung/wave/prebuilt/bcm4329_s8530.hcd:system/vendor/firmware/bcm4329_s8530.hcd \
-	device/samsung/wave/prebuilt/setmodel.sh:system/bin/setmodel.sh \
+	device/samsung/wave/prebuilt/setmodel.sh:system/bin/setmodel.sh
 
 # Init files
 PRODUCT_COPY_FILES += \
@@ -60,7 +60,7 @@ PRODUCT_COPY_FILES += \
 	device/samsung/wave/fstab.wave:root/fstab.wave2 \
 	device/samsung/wave/ueventd.wave.rc:root/ueventd.wave.rc \
 	device/samsung/wave/ueventd.wave.rc:root/ueventd.wave2.rc \
-	device/samsung/wave/twrp.fstab:recovery/root/etc/twrp.fstab\
+	device/samsung/wave/twrp.fstab:recovery/root/etc/twrp.fstab \
 	device/samsung/wave/partition.sh:recovery/root/partition.sh
 
 # Keylayout and Keychars
@@ -147,21 +147,29 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
 	frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
 	frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-	frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+	frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml
 
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.opengles.version=131072
 
+# Disable SELinux	
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.build.selinux=0
+
+# Development & ADB authentication settings
+ADDITIONAL_DEFAULT_PROPERTIES += \
+	ro.adb.secure=0 \
+	ro.build.selinux=0 \
+	ro.debuggable=1 \
+	ro.secure=0
+
 # These are the hardware-specific settings that are stored in system properties.
 # Note that the only such settings should be the ones that are too low-level to
 # be reachable from resources or other mechanisms.
 PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.interface=wlan0
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.config.low_ram=true
 
 # Extended JNI checks
 # The extended JNI checks will cause the system to run more slowly, but they can spot a variety of nasty bugs 
@@ -179,9 +187,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	dalvik.vm.dexopt-data-only=1
 
-# Set default USB interface and default to internal SD as /sdcard
+# Set default USB interface & ADB Mode
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=mtp
+	persist.sys.usb.config=mtp \
+	persist.service.adb.enable=1
 
 # call dalvik heap config
 $(call inherit-product-if-exists, frameworks/native/build/phone-hdpi-dalvik-heap.mk)
