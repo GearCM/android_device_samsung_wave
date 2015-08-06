@@ -17,7 +17,7 @@ ro.hwui.disable_scissor_opt=true
 ro.zygote.disable_gl_preload=1
 
 # Enable 16bpp Trasparency
-persist.sys.prefer_16bpp=1
+persist.sys.use_16bpp_alpha=1
 
 ## Screen ##
 
