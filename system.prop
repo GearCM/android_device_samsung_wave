@@ -33,6 +33,9 @@ ro.config.low_ram=true
 # Enable Purgeable Assets
 persist.sys.purgeable_assets=1
 
+# Enable KSM
+ro.ksm.default=1
+
 ## Radio ##
 
 # Mobile Data Interfaces
