@@ -4,9 +4,6 @@
 
 ## Graphics ##
 
-# Disable Dirty Regions Rendering
-debug.hwui.render_dirty_regions=false
-
 # Disable Unsupported Features
 ro.bq.gpu_to_cpu_unsupported=1
 
