@@ -171,6 +171,10 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.interface=wlan0
 
+# Dalvik VM Dexopt Flags
+PRODUCT_PROPERTY_OVERRIDES += \
+	dalvik.vm.dexopt-flags=m=y,u=y
+
 # Extended JNI checks
 # The extended JNI checks will cause the system to run more slowly, but they can spot a variety of nasty bugs 
 # before they have a chance to cause problems.
