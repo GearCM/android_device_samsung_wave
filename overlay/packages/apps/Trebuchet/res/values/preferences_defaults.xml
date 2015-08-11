@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="preferences_interface_homescreen_search_default">false</bool>
+    <string name="preferences_interface_drawer_scrolling_transition_effect">none</string>
+    <bool name="preferences_interface_homescreen_scrolling_wallpaper_scroll_default">false</bool>
+</resources>
