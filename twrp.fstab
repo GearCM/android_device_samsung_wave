@@ -6,6 +6,6 @@
 
 /cache			yaffs2		cache													flags=backup=1;display="Cache";canbewiped;wipeingui;wipeduringfactoryreset
 
-/data 			f2fs		/dev/lvpool/userdata 									flags=backup=1;display="Data";canbewiped;wipeingui;wipeduringfactoryreset
+/data 			f2fs		/dev/lvpool/userdata 									flags=backup=1;canbewiped;wipeingui;wipeduringfactoryreset
 
 /external_sd	auto		/dev/block/mmcblk1p1 /dev/block/mmcblk1					flags=display="External Storage";storage;wipeingui;removable
