@@ -124,7 +124,6 @@ PRODUCT_PACKAGES += \
 
 # Device-specific packages
 PRODUCT_PACKAGES += \
-	AriesParts \
 	Torch
 
 # f2fs
