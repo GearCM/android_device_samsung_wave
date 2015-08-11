@@ -20,13 +20,6 @@
   <string name="category_screen_title">หน้าจอ</string>
   <string name="mdnie_title_head">รูปแบบ mDNIe</string>
   <string name="mdnie_summary_head">ตั้ง mDNIe display post-processing</string>
-  <string name="category_tvout_title">ออกโทรทัศน์</string>
-  <string name="tvout_enable_head">ออกโทรทัศน์</string>
-  <string name="tvout_enable_summary_nocable">สายออกโทรทัศน์ไม่ได้เชื่อมต่ออยู่</string>
-  <string name="tvout_enable_summary">เชื่อมต่อสายออกโทรทัศน์แล้ว, ตรวจสอบเพื่อเปิด</string>
-  <string name="tvout_enable_summary_on">เปิดออกโทรทัศน์แล้ว</string>
-  <string name="tvout_system_head">ระบบโทรทัศน์</string>
-  <string name="tvout_system_summary">ตั้งค่าระบบโทรทัศน์สำหรับออกโทรทัศน์</string>
   <string name="button_reset_title">รีเซ็ต</string>
   <string name="generic_warning_title">คำเตือน</string>
   <string name="imei_not_sane_title">คำเตือน!</string>

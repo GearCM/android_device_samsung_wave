@@ -20,13 +20,6 @@
   <string name="category_screen_title">Οθόνη</string>
   <string name="mdnie_title_head">Λειτουργία mDNIe</string>
   <string name="mdnie_summary_head">Ρύθμιση μετεπεξεργασίας mDNIe οθόνης</string>
-  <string name="category_tvout_title">Έξοδος TV</string>
-  <string name="tvout_enable_head">Έξοδος TV</string>
-  <string name="tvout_enable_summary_nocable">Καλώδιο εξόδου TV αποσυνδεμένο</string>
-  <string name="tvout_enable_summary">Καλώδιο εξόδου TV συνδεδεμένο, επιλέξτε για ενεργοποίηση</string>
-  <string name="tvout_enable_summary_on">Έξοδος TV ενεργή</string>
-  <string name="tvout_system_head">Σύστημα TV</string>
-  <string name="tvout_system_summary">Ρύθμιση συστήματος TV για έξοδο TV</string>
   <string name="button_reset_title">Επαναφορά</string>
   <string name="generic_warning_title">Προσοχή</string>
   <string name="imei_not_sane_title">Προσοχή!</string>

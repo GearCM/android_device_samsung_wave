@@ -20,13 +20,6 @@
   <string name="category_screen_title">Екран</string>
   <string name="mdnie_title_head">Режим mDNIe</string>
   <string name="mdnie_summary_head">Налаштуйте пост-обробку mDNIe</string>
-  <string name="category_tvout_title">TV Вихід</string>
-  <string name="tvout_enable_head">TV Вихід</string>
-  <string name="tvout_enable_summary_nocable">TV Вихід кабель не підключений</string>
-  <string name="tvout_enable_summary">TV Вихід кабель підключений</string>
-  <string name="tvout_enable_summary_on">TV Вихід увімкнений</string>
-  <string name="tvout_system_head">TV система</string>
-  <string name="tvout_system_summary">Встановити вашу TV систему для TV виходу</string>
   <string name="button_reset_title">Скидання</string>
   <string name="generic_warning_title">Увага</string>
   <string name="imei_not_sane_title">Увага!</string>

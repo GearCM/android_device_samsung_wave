@@ -20,13 +20,6 @@
   <string name="category_screen_title">Skjerm</string>
   <string name="mdnie_title_head">mDNIe-modus</string>
   <string name="mdnie_summary_head">Juster mDNIe visningens etterbehandling</string>
-  <string name="category_tvout_title">TV ut</string>
-  <string name="tvout_enable_head">TV ut</string>
-  <string name="tvout_enable_summary_nocable">TV ut-kabel ikke tilkoblet</string>
-  <string name="tvout_enable_summary">TV ut-kabel tilkoblet, sjekk for å aktivere</string>
-  <string name="tvout_enable_summary_on">TV ut aktivert</string>
-  <string name="tvout_system_head">TV-system</string>
-  <string name="tvout_system_summary">Angi ditt TV-system for TV ut</string>
   <string name="button_reset_title">Tilbakestille</string>
   <string name="generic_warning_title">Advarsel</string>
   <string name="imei_not_sane_title">Advarsel!</string>

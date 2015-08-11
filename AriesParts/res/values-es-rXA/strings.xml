@@ -20,13 +20,6 @@
   <string name="category_screen_title">Pantalla</string>
   <string name="mdnie_title_head">Mou mDNIe</string>
   <string name="mdnie_summary_head">Axustar el postprocesáu de pantalla pal mDNIe</string>
-  <string name="category_tvout_title">Salida TV</string>
-  <string name="tvout_enable_head">Salida TV</string>
-  <string name="tvout_enable_summary_nocable">Cable de salida TV non coneutáu</string>
-  <string name="tvout_enable_summary">Cable de salida TV coneutáu, calca p\'activala</string>
-  <string name="tvout_enable_summary_on">Salida TV activada</string>
-  <string name="tvout_system_head">Sistema TV</string>
-  <string name="tvout_system_summary">Axusta\'l to sistema TV pa la salida de TV</string>
   <string name="button_reset_title">Restablecer</string>
   <string name="generic_warning_title">Avisu</string>
   <string name="imei_not_sane_title">¡Avisu!</string>

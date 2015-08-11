@@ -20,13 +20,6 @@
   <string name="category_screen_title">Ekranas</string>
   <string name="mdnie_title_head">mDNIe režimas</string>
   <string name="mdnie_summary_head">Nustatykite mDNIe paruošiamojo ekrano apdorojimą</string>
-  <string name="category_tvout_title">TV išvestis</string>
-  <string name="tvout_enable_head">TV išvestis</string>
-  <string name="tvout_enable_summary_nocable">Kabelis neprijungtas</string>
-  <string name="tvout_enable_summary">Kabelis prijungtas</string>
-  <string name="tvout_enable_summary_on">TV išvestis įjungta</string>
-  <string name="tvout_system_head">TV sistema</string>
-  <string name="tvout_system_summary">Nustatykite savo TV sistemą dėl TV išvesties</string>
   <string name="button_reset_title">Atkurti</string>
   <string name="generic_warning_title">Įspėjimas</string>
   <string name="imei_not_sane_title">Įspėjimas!</string>

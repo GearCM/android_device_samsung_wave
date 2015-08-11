@@ -20,13 +20,6 @@
   <string name="category_screen_title">画面</string>
   <string name="mdnie_title_head">mDNIeモード</string>
   <string name="mdnie_summary_head">mDNIeディスプレイポストプロセッシングを調整する</string>
-  <string name="category_tvout_title">テレビ出力</string>
-  <string name="tvout_enable_head">テレビ出力</string>
-  <string name="tvout_enable_summary_nocable">テレビ出力ケーブルが接続されていません</string>
-  <string name="tvout_enable_summary">テレビ出力ケーブルが接続されました、有効にするための確認をします</string>
-  <string name="tvout_enable_summary_on">テレビ出力は有効です</string>
-  <string name="tvout_system_head">テレビシステム</string>
-  <string name="tvout_system_summary">テレビ出力のためのテレビシステムを設定する</string>
   <string name="button_reset_title">リセット</string>
   <string name="generic_warning_title">警告</string>
   <string name="imei_not_sane_title">警告</string>

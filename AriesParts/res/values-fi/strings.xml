@@ -20,13 +20,6 @@
   <string name="category_screen_title">Näyttö</string>
   <string name="mdnie_title_head">mDNIe-tila</string>
   <string name="mdnie_summary_head">Säädä mDNIe-näytön jälkikäsittelyä</string>
-  <string name="category_tvout_title">TV-ulostulo</string>
-  <string name="tvout_enable_head">TV-ulostulo</string>
-  <string name="tvout_enable_summary_nocable">TV-ulostulon kaapelia ei ole kytketty</string>
-  <string name="tvout_enable_summary">TV-ulostulon kaapeli kytketty, ota käyttöön valitsemalla</string>
-  <string name="tvout_enable_summary_on">TV-ulostulo käytössä</string>
-  <string name="tvout_system_head">TV-järjestelmä</string>
-  <string name="tvout_system_summary">Aseta TV-järjestelmäsi TV-ulostulolle</string>
   <string name="button_reset_title">Palauta oletukset</string>
   <string name="generic_warning_title">Varoitus</string>
   <string name="imei_not_sane_title">Varoitus!</string>

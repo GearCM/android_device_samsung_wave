@@ -20,13 +20,6 @@
   <string name="category_screen_title">Layar</string>
   <string name="mdnie_title_head">Mode mDNIe</string>
   <string name="mdnie_summary_head">Sesuaikan tampilan mDNIe pasca-pengolahan</string>
-  <string name="category_tvout_title">TV Out</string>
-  <string name="tvout_enable_head">TV Out</string>
-  <string name="tvout_enable_summary_nocable">Kabel TV Out tidak terhubung</string>
-  <string name="tvout_enable_summary">Kabel TV Out terhubung, cek untuk mengaktifkan</string>
-  <string name="tvout_enable_summary_on">TV Out diaktifkan</string>
-  <string name="tvout_system_head">Sistem TV</string>
-  <string name="tvout_system_summary">Menetapkan sistem TV Anda untuk TV Out</string>
   <string name="button_reset_title">Set ulang</string>
   <string name="generic_warning_title">Peringatan</string>
   <string name="imei_not_sane_title">Peringatan!</string>

@@ -20,13 +20,6 @@
   <string name="category_screen_title">الشاشة</string>
   <string name="mdnie_title_head">وضع mDNIe</string>
   <string name="mdnie_summary_head">ضبط عرض mDNIe بعد المعالجة</string>
-  <string name="category_tvout_title">مخرج التلفزيون</string>
-  <string name="tvout_enable_head">مخرج التلفزيون</string>
-  <string name="tvout_enable_summary_nocable">كيبل مخرج التلفزيون غير متصل</string>
-  <string name="tvout_enable_summary">تم توصيل كيبل مخرج التلفزيون ، أختيار لتمكين</string>
-  <string name="tvout_enable_summary_on">تمكين مخرج التلفزيون</string>
-  <string name="tvout_system_head">نظام التلفزيون</string>
-  <string name="tvout_system_summary">تعيين النظام التلفزيون الخاص بك لمخرج التلفزيون</string>
   <string name="button_reset_title">إعادة تعيين</string>
   <string name="generic_warning_title">تحذير</string>
   <string name="imei_not_sane_title">تحذير!</string>

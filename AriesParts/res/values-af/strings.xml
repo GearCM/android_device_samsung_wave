@@ -20,13 +20,6 @@
   <string name="category_screen_title">Skerm</string>
   <string name="mdnie_title_head">mDNIe Modus</string>
   <string name="mdnie_summary_head">Verstel mDNIe skerm na-prosessering</string>
-  <string name="category_tvout_title">TV uit</string>
-  <string name="tvout_enable_head">TV uit</string>
-  <string name="tvout_enable_summary_nocable">TV uit kabel nie vebind</string>
-  <string name="tvout_enable_summary">TV Uit kabel verbind, tik om aan te skakel</string>
-  <string name="tvout_enable_summary_on">TV Uit Geaktiveer</string>
-  <string name="tvout_system_head">TV Stelsel</string>
-  <string name="tvout_system_summary">Stel jou TV-stelsel vir TV Uit</string>
   <string name="button_reset_title">Hestel</string>
   <string name="generic_warning_title">Waarskuwing</string>
   <string name="imei_not_sane_title">Waarskuwing!</string>

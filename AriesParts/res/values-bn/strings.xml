@@ -20,13 +20,6 @@
   <string name="category_screen_title">পর্দা</string>
   <string name="mdnie_title_head">mDNIe ধরণ</string>
   <string name="mdnie_summary_head">MDNIe প্রদর্শন পোস্ট-প্রসেসিং সামঞ্জস্য বিধান</string>
-  <string name="category_tvout_title">টিভি আউট</string>
-  <string name="tvout_enable_head">টিভি আউট</string>
-  <string name="tvout_enable_summary_nocable">টিভি আউট ক্যাবল সংযুক্ত নয়</string>
-  <string name="tvout_enable_summary">টিভি আউট কেবল সংযুক্ত, সক্রিয় করতে চিহ্নিত করুন</string>
-  <string name="tvout_enable_summary_on">টিভি আউট সক্রিয়</string>
-  <string name="tvout_system_head">টিভি ব্যবস্থা</string>
-  <string name="tvout_system_summary">টিভি আউটের জন্যে টিভি ব্যবস্থা নির্ধারণ করুন</string>
   <string name="button_reset_title">পুনরায় ধার্য করুন</string>
   <string name="generic_warning_title">সতর্কতা</string>
   <string name="imei_not_sane_title">সতর্কতা!</string>

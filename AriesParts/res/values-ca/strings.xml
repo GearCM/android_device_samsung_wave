@@ -20,13 +20,6 @@
   <string name="category_screen_title">Pantalla</string>
   <string name="mdnie_title_head">Mode mDNIe</string>
   <string name="mdnie_summary_head">Ajusta el post-processat de la pantalla mDNIe</string>
-  <string name="category_tvout_title">Sortida de TV</string>
-  <string name="tvout_enable_head">Sortida de TV</string>
-  <string name="tvout_enable_summary_nocable">Cable de sortida de TV no connectat</string>
-  <string name="tvout_enable_summary">Cable de sortida de TV connectat, marca-ho per activar</string>
-  <string name="tvout_enable_summary_on">Sortida de TV activada</string>
-  <string name="tvout_system_head">Sistema de TV</string>
-  <string name="tvout_system_summary">Estableix el teu sistema de TV per la sortida de TV</string>
   <string name="button_reset_title">Reinicia</string>
   <string name="generic_warning_title">Avís</string>
   <string name="imei_not_sane_title">Avís!</string>

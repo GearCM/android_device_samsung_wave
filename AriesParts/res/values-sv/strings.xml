@@ -20,13 +20,6 @@
   <string name="category_screen_title">Skärm</string>
   <string name="mdnie_title_head">nDNIe-läge</string>
   <string name="mdnie_summary_head">Justera mDNIe-efterbearbetning av skärmen</string>
-  <string name="category_tvout_title">TV-ut</string>
-  <string name="tvout_enable_head">TV-ut</string>
-  <string name="tvout_enable_summary_nocable">TV-ut-kabel ej inkopplad</string>
-  <string name="tvout_enable_summary">TV-ut-kabel inkopplad, kryssa i för att aktivera</string>
-  <string name="tvout_enable_summary_on">TV-ut aktiverat</string>
-  <string name="tvout_system_head">TV-system</string>
-  <string name="tvout_system_summary">Ställ in ditt TV-system för TV-ut</string>
   <string name="button_reset_title">Återställ</string>
   <string name="generic_warning_title">Varning</string>
   <string name="imei_not_sane_title">Varning!</string>

@@ -20,13 +20,6 @@
   <string name="category_screen_title">Schierm</string>
   <string name="mdnie_title_head">mDNIe-Modus</string>
   <string name="mdnie_summary_head">mDNIe-Schierm fir Nobeaarbechtung ajustéieren</string>
-  <string name="category_tvout_title">Tëleeausgang</string>
-  <string name="tvout_enable_head">Tëleeausgang</string>
-  <string name="tvout_enable_summary_nocable">Tëleeausgangskabel net ugeschloss</string>
-  <string name="tvout_enable_summary">Tëleeausgangskabel ugeschloss, Krop setze fir z\'aktivéieren</string>
-  <string name="tvout_enable_summary_on">Tëleeausgang aktivéiert</string>
-  <string name="tvout_system_head">Tëleesystem</string>
-  <string name="tvout_system_summary">Tëleesystem fir den Tëleeausgang astellen</string>
   <string name="button_reset_title">Zrécksetzen</string>
   <string name="generic_warning_title">Warnung</string>
   <string name="imei_not_sane_title">Warnung!</string>

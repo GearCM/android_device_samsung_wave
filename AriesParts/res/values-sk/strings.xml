@@ -20,13 +20,6 @@
   <string name="category_screen_title">Obrazovka</string>
   <string name="mdnie_title_head">Režim mDNIe</string>
   <string name="mdnie_summary_head">Upraviť spracovanie obrazovky mDNIe</string>
-  <string name="category_tvout_title">TV výstup</string>
-  <string name="tvout_enable_head">TV výstup</string>
-  <string name="tvout_enable_summary_nocable">Kábel pre TV výstup nie je pripojený</string>
-  <string name="tvout_enable_summary">Kábel pre TV výstup je pripojený, zaškrtnite pre povolenie</string>
-  <string name="tvout_enable_summary_on">Povolený TV výstup</string>
-  <string name="tvout_system_head">TV systém</string>
-  <string name="tvout_system_summary">Nastaviť systém TV pre TV výstup</string>
   <string name="button_reset_title">Obnoviť</string>
   <string name="generic_warning_title">Upozornenie</string>
   <string name="imei_not_sane_title">Varovanie</string>

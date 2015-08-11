@@ -20,13 +20,6 @@
   <string name="category_screen_title">Zaslon</string>
   <string name="mdnie_title_head">mDNIe način</string>
   <string name="mdnie_summary_head">Podesi post-radnje mDNIe zaslona</string>
-  <string name="category_tvout_title">TV Izlaz</string>
-  <string name="tvout_enable_head">TV Izlaz</string>
-  <string name="tvout_enable_summary_nocable">Kabel za TV Izlaz nije spojen</string>
-  <string name="tvout_enable_summary">Kabel za TV Izlaz spojen, odaberi za uključivanje</string>
-  <string name="tvout_enable_summary_on">TV Izlaz uključen</string>
-  <string name="tvout_system_head">TV sistem</string>
-  <string name="tvout_system_summary">Postavi TV sistem za TV izlaz</string>
   <string name="button_reset_title">Ponovno pokreni</string>
   <string name="generic_warning_title">Upozorenje</string>
   <string name="imei_not_sane_title">Upozorenje!</string>

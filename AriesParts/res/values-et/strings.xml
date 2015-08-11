@@ -20,13 +20,6 @@
   <string name="category_screen_title">Ekraan</string>
   <string name="mdnie_title_head">mDNIe režiim</string>
   <string name="mdnie_summary_head">Reguleeri mDNIe ekraani järeltöötlust</string>
-  <string name="category_tvout_title">TV Väljund</string>
-  <string name="tvout_enable_head">TV Väljund</string>
-  <string name="tvout_enable_summary_nocable">TV Väljundi kaabel pole ühendatud</string>
-  <string name="tvout_enable_summary">TV Väljundi kaabel ühendatud, vali et lubada</string>
-  <string name="tvout_enable_summary_on">TV Väljund lubatud</string>
-  <string name="tvout_system_head">TV-süsteem</string>
-  <string name="tvout_system_summary">Vali oma TV-süsteem TV Väljundi jaoks</string>
   <string name="button_reset_title">Lähtesta</string>
   <string name="generic_warning_title">Hoiatus</string>
   <string name="imei_not_sane_title">Hoiatus!</string>
