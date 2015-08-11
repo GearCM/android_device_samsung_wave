@@ -31,7 +31,6 @@ public class DisplaySettings extends PreferenceActivity  {
         @Override
         public void onReceive(Context context, Intent intent) {
             int state = intent.getIntExtra("state", 0);
-            updateTvOutEnable(state != 0);
         }
 
     };
