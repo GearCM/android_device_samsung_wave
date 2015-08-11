@@ -23,6 +23,9 @@ BOARD_SECOND_CAMERA_DEVICE := /dev/video2
 # Kernel Config
 TARGET_KERNEL_CONFIG := GearKernel_wave_defconfig
 
+# Enable dex-preoptimization to speed up first boot sequence
+WITH_DEXPREOPT := true
+
 # FM Radio
 BOARD_HAVE_FM_RADIO := true
 BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
@@ -171,6 +174,7 @@ TW_NO_CPU_TEMP := true
 TW_NO_REBOOT_BOOTLOADER := true
 
 BOARD_HAS_NO_REAL_SDCARD := true
+BOARD_SUPPRESS_SECURE_ERASE := true
 RECOVERY_SDCARD_ON_DATA := true
 TW_HAS_NO_RECOVERY_PARTITION := true
 TW_DEFAULT_EXTERNAL_STORAGE := true
