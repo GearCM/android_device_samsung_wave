@@ -124,7 +124,7 @@ PRODUCT_PACKAGES += \
 
 # Device-specific packages
 PRODUCT_PACKAGES += \
-	DeviceSettings \
+	AriesParts \
 	Torch
 
 # f2fs
