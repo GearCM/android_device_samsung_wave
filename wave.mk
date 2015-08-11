@@ -154,9 +154,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.opengles.version=131072
 
-# Disable SELinux	
+# Disable SELinux
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.build.selinux=0
+
+# Disable CM Superuser
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.sys.root_access=0
 
 # Development & ADB authentication settings
 ADDITIONAL_DEFAULT_PROPERTIES += \
