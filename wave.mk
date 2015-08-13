@@ -37,6 +37,10 @@
 DEVICE_PACKAGE_OVERLAYS += \
 	device/samsung/wave/overlay
 
+# Boot animation
+TARGET_SCREEN_HEIGHT := 320
+TARGET_SCREEN_WIDTH := 240
+
 # These are the hardware-specific configuration files
 PRODUCT_COPY_FILES += \
 	device/samsung/wave/prebuilt/asound.conf:system/etc/asound.conf \
