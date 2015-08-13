@@ -17,7 +17,7 @@
 # Product-specific compile-time definitions.
 #
 
-#Video Devices
+# Video Devices
 BOARD_SECOND_CAMERA_DEVICE := /dev/video2
 
 # Kernel Config
@@ -31,14 +31,7 @@ BOARD_HAVE_FM_RADIO := true
 BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 BOARD_FM_DEVICE := si4709
 
-BOARD_USES_GENERIC_AUDIO := false
-AUDIO_FEATURE_ENABLED_INCALL_MUSIC := false
-AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := false
-
 BOARD_USES_LIBSECRIL_STUB := true
-
-BOARD_NO_PAGE_FLIPPING := false
-BOARD_NO_32BPP := false
 
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
@@ -95,21 +88,17 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 419430400
 BOARD_FLASH_BLOCK_SIZE := 4096
 
 # Connectivity - Wi-Fi
-BOARD_NO_WIFI_HAL           := true
-BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WLAN_DEVICE           := bcmdhd
+BOARD_WLAN_DEVICE_REV       := bcm4329
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
 BOARD_HOSTAPD_DRIVER        := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_bcmdhd
-BOARD_WLAN_DEVICE           := bcmdhd
-BOARD_WLAN_DEVICE_REV       := bcm4329
 WIFI_DRIVER_MODULE_NAME     := "bcmdhd"
 WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcmdhd/parameters/firmware_path"
-WIFI_DRIVER_FW_PATH_STA     := "/vendor/firmware/fw_bcmdhd.bin"
 WIFI_DRIVER_FW_PATH_AP      := "/vendor/firmware/fw_bcmdhd_apsta.bin"
-
-# adb has root
-ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
+WIFI_DRIVER_FW_PATH_STA     := "/vendor/firmware/fw_bcmdhd.bin"
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/wave/bluetooth 
@@ -133,9 +122,6 @@ TARGET_NO_SEPARATE_RECOVERY := true
 # Boot Animation
 TARGET_BOOTANIMATION_TEXTURE_CACHE := false
 TARGET_BOOTANIMATION_USE_RGB565 := true
-
-# Use dlmalloc instead of jemalloc for mallocs on low-ram target kernels
-MALLOC_IMPL := dlmalloc
 
 # Hardware rendering
 USE_OPENGL_RENDERER := true
