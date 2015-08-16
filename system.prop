@@ -65,5 +65,5 @@ ro.telephony.ril.config=signalstrength
 ## OTA Updates ##
 
 ro.ota.romname=GearCM11_Wave
-ro.ota.version=20150814
+ro.ota.version=20150816
 ro.ota.manifest=https://raw.githubusercontent.com/GearCM/android_device_samsung_wave/cm-11.0/ota.xml
