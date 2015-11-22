@@ -1,11 +1,11 @@
-# mount point 	fstype 		device 													options (length for cryptfs encryption footer)
+# mount point    fstype      device                                          options (length for cryptfs encryption footer)
 
-/boot			mtd			boot
+/boot            mtd         boot
 
-/system			f2fs		/dev/lvpool/system										flags=backup=1;display="System";canbewiped;wipeingui
+/system          f2fs        /dev/lvpool/system                              flags=display="System"
 
-/cache			yaffs2		cache													flags=backup=1;display="Cache";canbewiped;wipeingui;wipeduringfactoryreset
+/cache           yaffs2      cache                                           flags=display="Cache"
 
-/data 			f2fs		/dev/lvpool/userdata 									flags=backup=1;canbewiped;wipeingui;wipeduringfactoryreset
+/data            f2fs        /dev/lvpool/userdata
 
-/external_sd	auto		/dev/block/mmcblk1p1 /dev/block/mmcblk1					flags=display="External Storage";storage;wipeingui;removable
+/external_sd     vfat        /dev/block/mmcblk1p1 /dev/block/mmcblk1         flags=display="External Storage";storage;wipeingui;removable
