@@ -41,8 +41,8 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := false
 TARGET_CPU_VARIANT := cortex-a8
 ARCH_ARM_HAVE_TLS_REGISTER := true
-TARGET_GLOBAL_CFLAGS += -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp --param l1-cache-size=32 --param l1-cache-line-size=32 --param l2-cache-size=512
-TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp --param l1-cache-size=32 --param l1-cache-line-size=32 --param l2-cache-size=512
+TARGET_GLOBAL_CFLAGS += -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
@@ -148,6 +148,21 @@ BOARD_CUSTOM_VSYNC_IOCTL := true
 
 # Screenrecord
 BOARD_SCREENRECORD_LANDSCAPE_ONLY := true
+
+# SELinux
+BOARD_SEPOLICY_DIRS += \
+    device/samsung/wave/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+    bdaddr_read.te \
+    file_contexts \
+    geomagneticd.te \
+    orientationd.te \
+    property_contexts \
+    pvrsrvinit.te \
+    rild.te \
+    tvouthack.te \
+    tvoutserver.te
 
 # Hardware tunables
 BOARD_HARDWARE_CLASS := device/samsung/wave/cmhw
