@@ -91,17 +91,17 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 419430400
 BOARD_FLASH_BLOCK_SIZE := 4096
 
 # Connectivity - Wi-Fi
-BOARD_WLAN_DEVICE           := bcmdhd
-BOARD_WLAN_DEVICE_REV       := bcm4329
-WPA_SUPPLICANT_VERSION      := VER_0_8_X
-BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
-BOARD_HOSTAPD_DRIVER        := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_bcmdhd
-WIFI_DRIVER_MODULE_NAME     := "bcmdhd"
-WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcmdhd/parameters/firmware_path"
-WIFI_DRIVER_FW_PATH_AP      := "/vendor/firmware/fw_bcmdhd_apsta.bin"
-WIFI_DRIVER_FW_PATH_STA     := "/vendor/firmware/fw_bcmdhd.bin"
+BOARD_WLAN_DEVICE                := bcmdhd
+BOARD_WLAN_DEVICE_REV            := bcm4329
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+BOARD_HOSTAPD_DRIVER             := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+WIFI_DRIVER_MODULE_NAME          := "bcmdhd"
+WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
+WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/fw_bcmdhd_apsta.bin"
+WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/fw_bcmdhd.bin"
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/wave/bluetooth 
@@ -112,6 +112,7 @@ BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/s3c-usbgadget/gadget/lun%d/file"
 
 # Recovery
+COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_HAS_NO_SELECT_BUTTON := true
@@ -128,16 +129,8 @@ TARGET_BOOTANIMATION_USE_RGB565 := true
 
 # Hardware rendering
 USE_OPENGL_RENDERER := true
-BOARD_EGL_CFG := device/samsung/wave/prebuilt/egl.cfg
 BOARD_EGL_SYSTEMUI_PBSIZE_HACK := true
-
-# TARGET_DISABLE_TRIPLE_BUFFERING can be used to disable triple buffering
-# on per target basis. On crespo it is possible to do so in theory
-# to save memory, however, there are currently some limitations in the
-# OpenGL ES driver that in conjunction with disable triple-buffering
-# would hurt performance significantly (see b/6016711)
 TARGET_DISABLE_TRIPLE_BUFFERING := false
-
 BOARD_ALLOW_EGL_HIBERNATION := true
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
@@ -170,26 +163,20 @@ BOARD_HARDWARE_CLASS := device/samsung/wave/cmhw
 # Include wave specific stuff
 -include device/samsung/wave/Android.mk
 
-# TWRP Flags
-DEVICE_RESOLUTION := 480x800
-
-TW_NO_BATT_PERCENT := true
-TW_NO_CPU_TEMP := true
-
-TW_NO_REBOOT_BOOTLOADER := true
-
+# TWRP Specific
 BOARD_HAS_NO_REAL_SDCARD := true
-BOARD_SUPPRESS_SECURE_ERASE := true
 RECOVERY_SDCARD_ON_DATA := true
-TW_HAS_NO_RECOVERY_PARTITION := true
+TW_BRIGHTNESS_PATH := "/sys/class/backlight/s5p_bl/brightness"
 TW_DEFAULT_EXTERNAL_STORAGE := true
-
-TW_EXCLUDE_ENCRYPTED_BACKUPS := true
-
 TW_INTERNAL_STORAGE_PATH := "/data/media"
 TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_EXCLUDE_ENCRYPTED_BACKUPS := true
 TW_EXTERNAL_STORAGE_PATH := "/external_sd"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
-
-TW_BRIGHTNESS_PATH := "/sys/class/backlight/s5p_bl/brightness"
 TW_MAX_BRIGHTNESS := 255
+TW_NO_BATT_PERCENT := true
+TW_NO_CPU_TEMP := true
+TW_NO_EXFAT_FUSE := true
+TW_NO_REBOOT_BOOTLOADER := true
+TW_HAS_NO_RECOVERY_PARTITION := true
+TW_THEME := portrait_hdpi
