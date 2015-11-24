@@ -117,6 +117,10 @@ PRODUCT_PACKAGES += \
     libril-client \
     libs3cjpeg
 
+# GearCM Extras
+PRODUCT_PACKAGES += \
+	Screencast
+
 # Libs
 PRODUCT_PACKAGES += \
     libstagefrighthw
@@ -155,10 +159,6 @@ PRODUCT_COPY_FILES += \
 # This is a 16.16 fixed point number
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072
-
-# Disable SELinux
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.selinux=0
 
 # Disable CM Superuser
 PRODUCT_PROPERTY_OVERRIDES += \
