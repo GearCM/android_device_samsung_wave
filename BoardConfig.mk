@@ -105,7 +105,7 @@ WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/fw_bcmdhd.bin"
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/wave/bluetooth 
-BOARD_BLUEDROID_VENDOR_CONF := device/samsung/wave/prebuilt/libbt_vndcfg.txt 
+BOARD_BLUEDROID_VENDOR_CONF := device/samsung/wave/bluetooth/libbt_vndcfg.txt 
 
 # Vold
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true

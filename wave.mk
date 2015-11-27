@@ -43,38 +43,38 @@ TARGET_SCREEN_WIDTH := 240
 
 # These are the hardware-specific configuration files
 PRODUCT_COPY_FILES += \
-    device/samsung/wave/prebuilt/asound.conf:system/etc/asound.conf \
-    device/samsung/wave/libaudio/audio_policy.conf:system/etc/audio_policy.conf \
-    device/samsung/wave/prebuilt/nvram_net_s8500.txt:system/vendor/firmware/nvram_net_s8500.txt \
-    device/samsung/wave/prebuilt/nvram_net_s8530.txt:system/vendor/firmware/nvram_net_s8530.txt \
-    device/samsung/wave/prebuilt/bcm4329_s8500.hcd:system/vendor/firmware/bcm4329_s8500.hcd \
-    device/samsung/wave/prebuilt/bcm4329_s8530.hcd:system/vendor/firmware/bcm4329_s8530.hcd \
-    device/samsung/wave/prebuilt/setmodel.sh:system/bin/setmodel.sh
+    device/samsung/wave/configs/audio/asound.conf:system/etc/asound.conf \
+    device/samsung/wave/configs/audio/audio_policy.conf:system/etc/audio_policy.conf \
+    device/samsung/wave/configs/wifi/nvram_net_s8500.txt:system/vendor/firmware/nvram_net_s8500.txt \
+    device/samsung/wave/configs/wifi/nvram_net_s8530.txt:system/vendor/firmware/nvram_net_s8530.txt \
+    device/samsung/wave/configs/wifi/bcm4329_s8500.hcd:system/vendor/firmware/bcm4329_s8500.hcd \
+    device/samsung/wave/configs/wifi/bcm4329_s8530.hcd:system/vendor/firmware/bcm4329_s8530.hcd \
+    device/samsung/wave/configs/platform/setmodel.sh:system/bin/setmodel.sh
 
 # Init files
 PRODUCT_COPY_FILES += \
-    device/samsung/wave/init.wave.rc:root/init.wave.rc \
-    device/samsung/wave/init.wave2.rc:root/init.wave2.rc \
-    device/samsung/wave/init.wave.usb.rc:root/init.wave.usb.rc \
-    device/samsung/wave/init.recovery.wave.rc:root/init.recovery.wave.rc \
-    device/samsung/wave/init.recovery.wave2.rc:root/init.recovery.wave2.rc \
-    device/samsung/wave/init.wave.usb.rc:recovery/root/usb.rc \
-    device/samsung/wave/fstab.wave:root/fstab.wave \
-    device/samsung/wave/fstab.wave:root/fstab.wave2 \
-    device/samsung/wave/ueventd.wave.rc:root/ueventd.wave.rc \
-    device/samsung/wave/ueventd.wave.rc:root/ueventd.wave2.rc \
-    device/samsung/wave/twrp.fstab:recovery/root/etc/twrp.fstab \
-    device/samsung/wave/partition.sh:recovery/root/partition.sh
+    device/samsung/wave/ramdisk/init.wave.rc:root/init.wave.rc \
+    device/samsung/wave/ramdisk/init.wave2.rc:root/init.wave2.rc \
+    device/samsung/wave/ramdisk/init.wave.usb.rc:root/init.wave.usb.rc \
+    device/samsung/wave/recovery/etc/init.recovery.wave.rc:root/init.recovery.wave.rc \
+    device/samsung/wave/recovery/etc/init.recovery.wave2.rc:root/init.recovery.wave2.rc \
+    device/samsung/wave/ramdisk/init.wave.usb.rc:recovery/root/usb.rc \
+    device/samsung/wave/ramdisk/fstab.wave:root/fstab.wave \
+    device/samsung/wave/ramdisk/fstab.wave:root/fstab.wave2 \
+    device/samsung/wave/ramdisk/ueventd.wave.rc:root/ueventd.wave.rc \
+    device/samsung/wave/ramdisk/ueventd.wave.rc:root/ueventd.wave2.rc \
+    device/samsung/wave/recovery/etc/twrp.fstab:recovery/root/etc/twrp.fstab \
+    device/samsung/wave/ramdisk/partition.sh:recovery/root/partition.sh
 
 # Keylayout and Keychars
 PRODUCT_COPY_FILES += \
-    device/samsung/wave/prebuilt/usr/idc/mxt224_ts_input.idc:system/usr/idc/mxt224_ts_input.idc \
-    device/samsung/wave/prebuilt/usr/keylayout/sec_jack.kl:system/usr/keylayout/sec_jack.kl \
-    device/samsung/wave/prebuilt/usr/keylayout/s5pv210-keypad.kl:system/usr/keylayout/s5pv210-keypad.kl \
-    device/samsung/wave/prebuilt/usr/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-    device/samsung/wave/prebuilt/usr/keychars/s5pv210-keypad.kcm:system/usr/keychars/s5pv210-keypad.kcm \
-    device/samsung/wave/prebuilt/usr/keychars/sec_jack.kcm:system/usr/keychars/sec_jack.kcm \
-    device/samsung/wave/prebuilt/usr/keychars/gpio-keys.kcm:system/usr/keychars/gpio-keys.kcm
+    device/samsung/wave/configs/idc/mxt224_ts_input.idc:system/usr/idc/mxt224_ts_input.idc \
+    device/samsung/wave/configs/keylayout/sec_jack.kl:system/usr/keylayout/sec_jack.kl \
+    device/samsung/wave/configs/keylayout/s5pv210-keypad.kl:system/usr/keylayout/s5pv210-keypad.kl \
+    device/samsung/wave/configs/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+    device/samsung/wave/configs/keychars/s5pv210-keypad.kcm:system/usr/keychars/s5pv210-keypad.kcm \
+    device/samsung/wave/configs/keychars/sec_jack.kcm:system/usr/keychars/sec_jack.kcm \
+    device/samsung/wave/configs/keychars/gpio-keys.kcm:system/usr/keychars/gpio-keys.kcm
 
 # SHP Modem interfaces
 PRODUCT_PACKAGES += \
@@ -92,8 +92,8 @@ PRODUCT_PACKAGES += \
 # These are the OpenMAX IL configuration files
 PRODUCT_COPY_FILES += \
     hardware/samsung/exynos3/s5pc110/sec_mm/sec_omx/sec_omx_core/secomxregistry:system/etc/secomxregistry \
-    device/samsung/wave/prebuilt/media_profiles.xml:system/etc/media_profiles.xml \
-    device/samsung/wave/prebuilt/media_codecs.xml:system/etc/media_codecs.xml
+    device/samsung/wave/configs/media/media_profiles.xml:system/etc/media_profiles.xml \
+    device/samsung/wave/configs/media/media_codecs.xml:system/etc/media_codecs.xml
 
 # These are the OpenMAX IL modules
 PRODUCT_PACKAGES += \
