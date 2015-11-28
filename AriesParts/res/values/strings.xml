@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2013 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">GearCM Settings</string>
+
+    <string name="gearcm_settings_title">GearCM kernel settings</string>
+    <string name="gearcm_settings_summary">With this app, you can change the settings for the Mackay kernel. Use at your own risk\n\nIf you run another kernel, these settings may be nonfunctional or cause force closes.</string>
+
+    <string name="category_screen_title">Screen</string>
+    <string name="mdnie_title_head">mDNIe Mode</string>
+    <string name="mdnie_summary_head">Adjust mDNIe display post-processing</string>
+
+    <string name="category_radio_title">Radio</string>
+    <string name="hspa_title_head">HSPA</string>
+    <string name="hspa_summary_head">Enable HSDPA/HSUPA</string>
+
+    <string name="category_volume_boost_title">Volume Controls</string>
+    <string name="volume_boost_title_head">In-Call Volume Controls</string>
+    <string name="volume_boost_summary_head">Boost in-call volume settings</string>
+    <string name="boost_rcv_title">Earpiece Volume</string>
+    <string name="boost_bt_title">Bluetooth Volume</string>
+    <string name="boost_spk_title">Speakerphone Volume</string>
+    <string name="boost_hp_title">Headphone Volume</string>
+    <string name="mic_rcv_title">Earpiece Mic</string>
+    <string name="mic_spk_title">Speakerphone Mic</string>
+    <string name="mic_hp_title">Headphone Mic</string>
+    <string name="mic_hp_no_mic_title">Headphone (with no mic) Mic</string>
+
+    <string name="category_dock_audio_title">Dock Audio</string>
+    <string name="cardock_audio_title_head">Car Dock</string>
+    <string name="cardock_audio_summary_on">Car dock audio enabled</string>
+    <string name="cardock_audio_summary_off">Car dock audio disabled</string>
+    <string name="deskdock_audio_title_head">Desk Dock</string>
+    <string name="deskdock_audio_summary_on">Desk dock audio enabled</string>
+    <string name="deskdock_audio_summary_off">Desk dock audio disabled</string>
+
+    <string name="category_wifi_title">WiFi power mode</string>
+    <string name="wifi_speed_head">Screen off power mode</string>
+    <string name="wifi_speed_on">Fast</string>
+    <string name="wifi_speed_off">Energy-saving</string>
+
+    <string name="category_ram_title">RAM settings (reboot required)</string>
+    <string name="lowram_head">Activate low RAM settings, which will disable some graphical options to increase overall system smoothness</string>
+    <string name="lowram_off">Low RAM not activated</string>
+    <string name="lowram_on">Low RAM activated</string>
+
+    <string name="button_reset_title">Reset</string>
+
+    <!-- Used for activity title. Usually not visible, except on the
+         multi-task screen -->
+    <string name="generic_warning_title">Warning</string>
+
+    <!-- Invalid IMEI -->
+    <string name="imei_not_sane_title">Warning!</string>
+    <string name="imei_not_sane_message">A problem was detected with your device. Your device IMEI number is invalid. An invalid IMEI number could cause network issues including the inability to call emergency numbers.</string>
+    <string name="imei_not_sane_ok">OK</string>
+
+    <string name="category_apply_settings">Apply Settings after boot</string>
+    <string name="apply_title">Apply Setting</string>
+    <string name="apply_summary_on">Settings get applied</string>
+    <string name="apply_summary_off">Settings dont get applied</string>
+
+</resources>
