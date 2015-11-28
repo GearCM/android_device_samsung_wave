@@ -6,7 +6,7 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 
 public class Sanity {
-    private static final String TAG = "AriesParts";
+    private static final String TAG = "GearCMParts";
     private static final String BAD_IMEI[] = {
         "004999010640000"
     };

@@ -17,7 +17,7 @@
     <string name="app_name">GearCM Settings</string>
 
     <string name="gearcm_settings_title">GearCM kernel settings</string>
-    <string name="gearcm_settings_summary">With this app, you can change the settings for the Mackay kernel. Use at your own risk\n\nIf you run another kernel, these settings may be nonfunctional or cause force closes.</string>
+    <string name="gearcm_settings_summary">With this app, you can change the settings for the GearCM kernel. Use at your own risk\n\nIf you run another kernel, these settings may be nonfunctional or cause force closes.</string>
 
     <string name="category_screen_title">Screen</string>
     <string name="mdnie_title_head">mDNIe Mode</string>

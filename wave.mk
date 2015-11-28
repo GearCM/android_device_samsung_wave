@@ -108,7 +108,7 @@ PRODUCT_PACKAGES += \
 
 # Device-specific packages
 PRODUCT_PACKAGES += \
-    AriesParts \
+    GearCMParts \
     Torch
 
 # Hardware Permissions
