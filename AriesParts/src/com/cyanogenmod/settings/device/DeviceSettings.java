@@ -41,6 +41,15 @@ public class DeviceSettings extends PreferenceActivity  {
 
     private static SharedPreferences preferences;
 
+    private BroadcastReceiver mHeadsetReceiver = new BroadcastReceiver() {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            int state = intent.getIntExtra("state", 0);
+        }
+
+    };
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
