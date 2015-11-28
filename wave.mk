@@ -19,10 +19,6 @@ LOCAL_PATH := device/samsung/wave
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-# Boot Animation
-TARGET_SCREEN_HEIGHT := 320
-TARGET_SCREEN_WIDTH := 240
-
 # These are the hardware-specific configuration files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/asound.conf:system/etc/asound.conf \

@@ -12,6 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Boot Animation
+TARGET_SCREEN_HEIGHT := 320
+TARGET_SCREEN_WIDTH := 240
+
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
@@ -34,3 +38,5 @@ PRODUCT_MODEL := GT-S8500
 PRODUCT_BRAND := samsung
 
 TARGET_UNOFFICIAL_BUILD_ID := GearCM
+
+PRODUCT_BOOTANIMATION := device/samsung/wave/prebuilts/bootanimation.zip
