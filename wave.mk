@@ -23,10 +23,6 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 TARGET_SCREEN_HEIGHT := 320
 TARGET_SCREEN_WIDTH := 240
 
-# AAPT Config
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := mdpi
-
 # These are the hardware-specific configuration files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/asound.conf:system/etc/asound.conf \

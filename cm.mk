@@ -21,6 +21,10 @@ $(call inherit-product, device/samsung/wave/wave.mk)
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/cm/config/common_mini_phone.mk)
 
+# AAPT Config
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := mdpi
+
 # Device identifier
 PRODUCT_NAME := cm_wave
 PRODUCT_DEVICE := wave
