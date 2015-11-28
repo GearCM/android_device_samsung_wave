@@ -105,6 +105,9 @@
     <!-- If this is true, the screen will fade off. -->
     <bool name="config_animateScreenLights">true</bool>
 
+    <!-- Hide "Backlight" settings since not supported (timeout controlled by kernel) -->
+    <integer name="config_buttonBrightnessSettingDefault">0</integer>
+
     <!-- Control whether being in the desk dock should enable accelerometer
          based screen orientation.  This defaults to true because it is
          common for desk docks to be sold in a variety of form factors
