@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-     Copyright (C) 2012 The CyanogenMod Project
+<!-- Copyright (C) 2013 The CyanogenMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
 
-           http://www.apache.org/licenses/LICENSE-2.0
+          http://www.apache.org/licenses/LICENSE-2.0
 
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,14 +14,20 @@
      limitations under the License.
 -->
 
-<resources xmlns:xliff="urnasis:names:tc:xliff:document:1.2 ">
+<resources>
 
-    <!-- Home button Wake Support. Some devices do not support this.
-         Setting to false will disable Home button Wake support -->
+    <!-- SAR Level for a device -->
+    <!-- Must be overlaid by device -->
+    <bool name="config_show_sar_enable" translatable="false">true</bool>
+    <!-- Maximum Specific Absorption Rate for head -->
+    <string name="sar_head_level" translatable="false">0.988</string>
+    <!-- Maximum Specific Absorption Rate for body -->
+    <string name="sar_body_level" translatable="false">0.592</string>
+
+    <!-- Home button Wake Support -->
     <bool name="config_show_homeWake">true</bool>
-
-    <!-- Volume Rocker Wake Support. Some devices do not support (PMU) this.
-         Setting to false will disable Volume Rocker Wake support -->
+	
+    <!-- Volume Rocker Wake -->
     <bool name="config_show_volumeRockerWake">true</bool>
 
 </resources>
