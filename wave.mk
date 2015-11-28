@@ -16,11 +16,10 @@
 
 LOCAL_PATH := device/samsung/wave
 
-# These are the hardware-specific configuration files
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-# Boot animation
+# Boot Animation
 TARGET_SCREEN_HEIGHT := 320
 TARGET_SCREEN_WIDTH := 240
 
@@ -105,7 +104,7 @@ PRODUCT_PACKAGES += \
 
 # GearCM Extras
 PRODUCT_PACKAGES += \
-	Screencast
+    Screencast
 
 # Libs
 PRODUCT_PACKAGES += \
@@ -118,12 +117,6 @@ PRODUCT_PACKAGES += \
 # Device-specific packages
 PRODUCT_PACKAGES += \
     Torch
-
-# f2fs
-PRODUCT_PACKAGES += \
-    fsck.f2fs \
-    mkfs.f2fs \
-    fibmap.f2fs
 
 # Hardware Permissions
 PRODUCT_COPY_FILES += \
