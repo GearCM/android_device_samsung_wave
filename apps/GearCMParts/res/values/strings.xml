@@ -14,10 +14,10 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">Manage GearCM</string>
+    <string name="app_name">Set GearCM</string>
 
-    <string name="gearcm_settings_title">GearCM kernel settings</string>
-    <string name="gearcm_settings_summary">With this app, you can change the settings for the GearCM kernel. Use at your own risk\n\nIf you run another kernel, these settings may be nonfunctional or cause force closes.</string>
+    <string name="gearcm_settings_title">GearCM settings</string>
+    <string name="gearcm_settings_summary">With this app, you can change the settings for GearCM ROM.</string>
 
     <string name="category_screen_title">Screen</string>
     <string name="mdnie_title_head">mDNIe Mode</string>
