@@ -40,18 +40,18 @@ PRODUCT_COPY_FILES += \
 
 # Init files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/ramdisk/init.wave.rc:root/init.wave.rc \
-    $(LOCAL_PATH)/ramdisk/init.wave2.rc:root/init.wave2.rc \
-    $(LOCAL_PATH)/ramdisk/init.wave.usb.rc:root/init.wave.usb.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.wave.rc:root/init.wave.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.wave2.rc:root/init.wave2.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.wave.usb.rc:root/init.wave.usb.rc \
     $(LOCAL_PATH)/recovery/etc/init.recovery.wave.rc:root/init.recovery.wave.rc \
     $(LOCAL_PATH)/recovery/etc/init.recovery.wave2.rc:root/init.recovery.wave2.rc \
-    $(LOCAL_PATH)/ramdisk/init.wave.usb.rc:recovery/root/usb.rc \
-    $(LOCAL_PATH)/ramdisk/fstab.wave:root/fstab.wave \
-    $(LOCAL_PATH)/ramdisk/fstab.wave:root/fstab.wave2 \
-    $(LOCAL_PATH)/ramdisk/ueventd.wave.rc:root/ueventd.wave.rc \
-    $(LOCAL_PATH)/ramdisk/ueventd.wave.rc:root/ueventd.wave2.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.wave.usb.rc:recovery/root/usb.rc \
+    $(LOCAL_PATH)/rootdir/etc/fstab.wave:root/fstab.wave \
+    $(LOCAL_PATH)/rootdir/etc/fstab.wave:root/fstab.wave2 \
+    $(LOCAL_PATH)/rootdir/etc/ueventd.wave.rc:root/ueventd.wave.rc \
+    $(LOCAL_PATH)/rootdir/etc/ueventd.wave.rc:root/ueventd.wave2.rc \
     $(LOCAL_PATH)/recovery/etc/twrp.fstab:recovery/root/etc/twrp.fstab \
-    $(LOCAL_PATH)/ramdisk/partition.sh:recovery/root/partition.sh
+    $(LOCAL_PATH)/rootdir/etc/partition.sh:recovery/root/partition.sh
 
 # Keylayout and Keychars
 PRODUCT_COPY_FILES += \

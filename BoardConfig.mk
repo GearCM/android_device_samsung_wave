@@ -114,6 +114,7 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/s3c-usbgadget/gadget/l
 # Recovery
 BOARD_USES_BML_OVER_MTD := true
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.wave
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
