@@ -38,6 +38,7 @@ public class DeviceSettings extends PreferenceActivity  {
     private CheckBoxPreference mCarDockAudio;
     private CheckBoxPreference mDeskDockAudio;
     private CheckBoxPreference mWifiSpeed;
+    private CheckBoxPreference mFastCharge;
     private CheckBoxPreference mLowram;
     private CheckBoxPreference mApply;
 
