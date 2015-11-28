@@ -52,6 +52,11 @@
     <string name="wifi_speed_on">Fast</string>
     <string name="wifi_speed_off">Energy-saving</string>
 
+    <string name="category_charge_title">Fast charge</string>
+    <string name="fast_charge_head">Fast charging on USB</string>
+    <string name="fast_charge_on">Enable</string>
+    <string name="fast_charge_off">Disabled</string>
+
     <string name="category_ram_title">RAM settings (reboot required)</string>
     <string name="lowram_head">Activate low RAM settings, which will disable some graphical options to increase overall system smoothness</string>
     <string name="lowram_off">Low RAM not activated</string>

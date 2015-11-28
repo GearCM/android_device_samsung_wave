@@ -26,6 +26,8 @@ public class DeviceSettings extends PreferenceActivity  {
     public static final String KEY_DOCK_AUDIO_CATEGORY = "category_dock_audio";
     public static final String KEY_WIFI_SPEED = "wifi_speed";
     public static final String KEY_WIFI_CATEGORY = "category_wifi";
+    public static final String KEY_FAST_CHARGE = "fast_charge";
+    public static final String KEY_CHARGE_CATEGORY = "category_charge";
     public static final String KEY_RAM_CATEGORY = "category_ram";
     public static final String KEY_LOWRAM = "lowram";
     public static final String KEY_APPLY = "apply";
@@ -95,6 +97,15 @@ public class DeviceSettings extends PreferenceActivity  {
         } else {
             PreferenceCategory category = (PreferenceCategory) getPreferenceScreen().findPreference(KEY_WIFI_CATEGORY);
             category.removePreference(mWifiSpeed);
+            getPreferenceScreen().removePreference(category);
+        }
+
+        mFastCharge = (CheckBoxPreference) findPreference(KEY_FAST_CHARGE);
+        if (Charge.isSupported()) {
+            mFastCharge.setOnPreferenceChangeListener(new Charge());
+        } else {
+            PreferenceCategory category = (PreferenceCategory) getPreferenceScreen().findPreference(KEY_CHARGE_CATEGORY);
+            category.removePreference(mFastCharge);
             getPreferenceScreen().removePreference(category);
         }
 

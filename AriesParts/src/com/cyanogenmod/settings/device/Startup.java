@@ -20,6 +20,7 @@ public class Startup extends BroadcastReceiver {
         DockAudio.restore(context);
         Sanity.check(context);
         Wifi.restore(context);
+        Charge.restore(context);
         Ram.restore(context);
 	}
     }
