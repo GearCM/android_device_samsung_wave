@@ -15,13 +15,7 @@ public class Startup extends BroadcastReceiver {
         int apply = sharedPrefs.getBoolean(DeviceSettings.KEY_APPLY, true) ? 1 : 0;
 	if(apply == 1) {
         Mdnie.restore(context);
-        Hspa.restore(context);
-        VolumeBoostPreference.restore(context);
-        DockAudio.restore(context);
         Sanity.check(context);
-        Wifi.restore(context);
-        Charge.restore(context);
-        Ram.restore(context);
 	}
     }
 
