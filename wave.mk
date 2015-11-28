@@ -98,10 +98,6 @@ PRODUCT_PACKAGES += \
     libril-client \
     libs3cjpeg
 
-# GearCM Extras
-PRODUCT_PACKAGES += \
-    Screencast
-
 # Libs
 PRODUCT_PACKAGES += \
     libstagefrighthw
