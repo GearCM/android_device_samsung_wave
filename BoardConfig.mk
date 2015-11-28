@@ -1,4 +1,5 @@
-# Copyright (C) 2007 The Android Open Source Project
+#
+# Copyright (C) 2015 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,14 +12,9 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-# BoardConfig.mk
-#
-# Product-specific compile-time definitions.
 #
 
-# Video Devices
-BOARD_SECOND_CAMERA_DEVICE := /dev/video2
+LOCAL_PATH := device/samsung/wave
 
 # Kernel Config
 TARGET_KERNEL_CONFIG := GearKernel_wave_defconfig
@@ -54,11 +50,12 @@ TARGET_BOOTLOADER_BOARD_NAME := wave
 BOARD_MOBILEDATA_INTERFACE_NAME = "pdp0"
 
 # Kernel Source
+BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/shbootimg.mk
 TARGET_KERNEL_SOURCE := kernel/samsung/aries
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/wave
+TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)/wave
 
 # Fonts
 SMALLER_FONT_FOOTPRINT := true
@@ -75,9 +72,12 @@ BOARD_CAMERA_HAVE_FLASH := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 
-# Video Devices
-BOARD_V4L2_DEVICE := /dev/video1
+# Camera
 BOARD_CAMERA_DEVICE := /dev/video0
+BOARD_SECOND_CAMERA_DEVICE := /dev/video2
+
+# V4L2
+BOARD_V4L2_DEVICE := /dev/video1
 
 BOARD_NAND_PAGE_SIZE := 4096
 BOARD_NAND_SPARE_SIZE := 128
@@ -104,24 +104,18 @@ WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/fw_bcmdhd_apsta.bin"
 WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/fw_bcmdhd.bin"
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/wave/bluetooth 
-BOARD_BLUEDROID_VENDOR_CONF := device/samsung/wave/bluetooth/libbt_vndcfg.txt 
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth 
+BOARD_BLUEDROID_VENDOR_CONF := $(LOCAL_PATH)/bluetooth/libbt_vndcfg.txt 
 
 # Vold
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/s3c-usbgadget/gadget/lun%d/file"
 
 # Recovery
+BOARD_USES_BML_OVER_MTD := true
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/wave/recovery/recovery_keys.c
-BOARD_USES_BML_OVER_MTD := true
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/wave/shbootimg.mk
-TARGET_RECOVERY_FSTAB := device/samsung/wave/fstab.wave
-RECOVERY_FSTAB_VERSION := 2
-TARGET_NO_SEPARATE_RECOVERY := true
 
 # Boot Animation
 TARGET_BOOTANIMATION_TEXTURE_CACHE := false
@@ -159,9 +153,6 @@ BOARD_SEPOLICY_UNION += \
 
 # Hardware tunables
 BOARD_HARDWARE_CLASS := device/samsung/wave/cmhw
-
-# Include wave specific stuff
--include device/samsung/wave/Android.mk
 
 # TWRP Specific
 BOARD_HAS_NO_REAL_SDCARD := true
