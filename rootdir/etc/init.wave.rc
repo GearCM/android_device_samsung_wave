@@ -165,7 +165,7 @@ on post-fs-data
 on boot
 # KSM
     write /sys/kernel/mm/ksm/pages_to_scan 256
-    write /sys/kernel/mm/ksm/sleep_millisecs 1500
+    write /sys/kernel/mm/ksm/sleep_millisecs 4000
 
 # memory parameters
     write /proc/sys/vm/dirty_ratio 16
