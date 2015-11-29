@@ -16,6 +16,10 @@ ro.zygote.disable_gl_preload=1
 # Enable 16bpp Trasparency
 persist.sys.use_16bpp_alpha=1
 
+# Disable HDCP by default
+persist.hdmi.hdcp_enabled=false
+persist.sys.hdcp_checking=never
+
 ## Screen ##
 
 # WVGA Screen Density
@@ -65,5 +69,5 @@ ro.telephony.ril.config=signalstrength
 ## OTA Updates ##
 
 ro.ota.romname=GearCM11_Wave
-ro.ota.version=20150816
+ro.ota.version=20151129
 ro.ota.manifest=https://raw.githubusercontent.com/GearCM/android_device_samsung_wave/cm-11.0/ota.xml
